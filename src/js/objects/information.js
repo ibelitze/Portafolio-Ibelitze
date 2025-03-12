@@ -7,7 +7,7 @@ export const infoSpanish = {
     firstInfo: {
      shown: false,
      title: "Bienvenido/a!",
-     description: `Te invito a mi portafolio virtual. Aún está en fase de prueba pero espero que lo disfrutes!.  
+     description: `Te invito a mi portafolio virtual. Usa las flechas de tu teclado para moverte. Aún está en fase de prueba pero espero que lo disfrutes!.  
      Si deseas leer mi información debes recoger todas las monedas del escenario.
      Buena suerte. No te caigas por el precipicio!`,
     },
