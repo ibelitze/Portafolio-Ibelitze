@@ -38,7 +38,7 @@ export function desktopPlatforms() {
         new Platform({x: 800, y: 300, image: platfsmall}),
         new Platform({x: 3522, y: 300, image: platfrmMedium}),
         new Platform({x: 4803, y: 270, image: platfmLarge}),
-        new Platform({x: 5733, y: 280, image: platfmLarge}),
+        new Platform({x: 5660, y: 310, image: platfmLarge}),
     ];
     return temp;
 }
@@ -51,7 +51,7 @@ export function mobilePlatforms() {
         new Platform({x: 800, y: 220, image: platfsmall}),
         new Platform({x: 3522, y: 220, image: platfrmMedium}),
         new Platform({x: 4803, y: 190, image: platfmLarge}),
-        new Platform({x: 5720, y: 190, image: platfmLarge}),
+        new Platform({x: 5660, y: 190, image: platfmLarge}),
     ];
     return temp;
 }
@@ -82,7 +82,7 @@ export function desktopGenericObjects() {
         new GenericObject({x: 4123, y: 437, image: bushh2, type: 'bush'}),
         new GenericObject({x: 4712, y: 437, image: bushh2, type: 'bush'}),
         new GenericObject({x: 4762, y: 437, image: bushh1, type: 'bush'}),
-        new GenericObject({x: 5890, y: 250, image: bushh2, type: 'bush'}),
+        new GenericObject({x: 5890, y: 290, image: bushh2, type: 'bush'}),
     ];
     return temp;
 }
@@ -134,7 +134,6 @@ export function deskMovCoins(type) {
 
     let temp = [
         new Coin({x: 30, y: 30, image: coinn, type: 'counter'}),
-
         new Coin({x: 560, y: coinLow, image: coinn, type: 'point'}),
         new Coin({x: 840, y: coinHigh, image: coinn, type: 'point'}),
         new Coin({x: 1120, y: coinLow, image: coinn, type: 'point'}),
@@ -147,7 +146,7 @@ export function deskMovCoins(type) {
         new Coin({x: 4300, y: coinLow, image: coinn, type: 'point'}),
         new Coin({x: 4800, y: coinHigh, image: coinn, type: 'point'}),
         new Coin({x: 5080, y: coinHigh, image: coinn, type: 'point'}),
-        new Coin({x: 5800, y: coinHigh, image: coinn, type: 'point'}),
+        new Coin({x: 5760, y: coinHigh, image: coinn, type: 'point'}),
     ];
     return temp;
 }
