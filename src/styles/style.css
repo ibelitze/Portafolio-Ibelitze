@@ -1,0 +1,160 @@
+/* ------------------------------------------------------------------------------ */
+/* GENERAL STYLES */
+
+body {
+    margin: 0;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.mobile-buttons {
+    display: none;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* SWEET-ALERT STYLES  */
+
+.welcome-popup,.first-message {
+    background-color: #DE7013;
+    color: #FFC67D;
+    font-family: 'Fira Sans';
+    border-radius: 20px;
+    border: 15px solid #BD5315;
+
+    strong {
+        font-size: 19px;
+    }
+
+    .confirm-button {
+        border-radius: 15px;
+        border: 3px solid #FFC67D;
+        font-family: 'Fira Sans';
+        background: #A64912;
+        color: #FFC67D;
+    }
+    .confirm-button:focus-visible {
+        box-shadow: none;
+    }
+}
+
+/* first-message es la clase que uso para casi todos los popups
+(estoy segura que hay mejores nombres, pero ya me acostumbré a éste) */
+.first-message {
+    grid-column: 2;
+    grid-row: 2;
+    place-self: center center;
+    max-width: 200vh;
+    min-width: 120vh;
+    padding-bottom: 20px;
+
+    h2 {
+        font-weight: bold;
+    }
+    p {
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+/* clase de CSS para los flex-box de ciertas imágenes, por ejemplo: los iconos de redes sociales y github */
+.box-icons, .box-stars {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-icons {
+    margin-top: 22px;
+    a {
+        margin: 2px 10px;
+    }
+
+    .icon {
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
+}
+.box-stars {
+    .golden-star {
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------ */
+/* MEDIA QUERIES - MOBILE */
+
+@media screen and (max-width: 550px) {
+    .first-message {
+        min-width: auto;
+        max-width: 90vh;
+        font-size: 12px;
+    }
+
+    .mobile-buttons {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        min-width: 200px;
+        height: 70px;
+        bottom: 30px;
+    }
+
+    .buttonGame {
+        position: relative;
+        display: flex;
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+        border: 3px solid #FFC67D;
+        font-family: 'Fira Sans';
+        background: #A64912;
+        color: #FFC67D;
+        text-align: center;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .mobile-buttons {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        min-width: 200px;
+        height: 70px;
+        bottom: 30px;
+    }
+
+    .buttonGame {
+        position: relative;
+        display: flex;
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+        border: 3px solid #FFC67D;
+        font-family: 'Fira Sans';
+        background: #A64912;
+        color: #FFC67D;
+        text-align: center;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    /* arreglando detallitos.. */
+    .mobile-up img {
+        max-width: 80%;
+        max-height: 80%;
+    }
+}
