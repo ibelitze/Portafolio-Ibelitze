@@ -15,15 +15,8 @@ import {createImage, countingCoins} from './utils'
 
 import catRunRight from '../assets/img/IdleCat-right.png'
 import catRunLeft from '../assets/img/IdleCat-left.png'
-import buttonUP from '../assets/img/button-up.png'
-import buttonLEFT from '../assets/img/button-left.png'
-import buttonRIGHT from '../assets/img/button-right.png'
 let catrnRght = createImage(catRunRight);
 let catrnLeft = createImage(catRunLeft);
-
-document.getElementById('img-button-left').src = buttonLEFT;
-document.getElementById('img-button-up').src = buttonUP;
-document.getElementById('img-button-right').src = buttonRIGHT;
 
 
 /* -------------------------------------------------------------------------------------- */
@@ -52,6 +45,8 @@ let player = null;
 let positionPopups = 'center';
 let maxMovementPlayerRight = 600;
 let playerOnPlatformY = 0;
+// LANGUAGE
+let language = infoSpanish;
 
 // si el canvas es angosto entonces dejamos el máximo movimiento del player hasta 400px
 // eso permite activar el parallax en pantallas más pequeñas
@@ -101,7 +96,7 @@ function animate() {
     // setTimeout me permite controlar la tasa de retraso de todo el dibujado en el canvas
     // eso se resume a una tasa de dibujado más lenta, pero más controlada 
     // (el sprite de mi gato ya no se mueve a la velocidad de la luz XD)
-    setTimeout(animate, 22);
+    setTimeout(animate, 20);
 
     // poniendo el background del color adecuado
     context.fillStyle = '#FBE29A';
@@ -158,7 +153,7 @@ function animate() {
     });
 
     // donde se registra y se ejecuta el contador de monedas + POPUPS
-    coinCounter = countingCoins(coins, infoSpanish, classesForPopups, positionPopups);
+    coinCounter = countingCoins(coins, language, classesForPopups, positionPopups);
 
     // activando los movimientos del jugador
     // el jugador se mueve en el axis X 
@@ -263,23 +258,53 @@ animate();
 /* -------------------------------------------------------------------------------------- */
 /* EVENT LISTENERS AND SETTIMEOUT */
 
+function firtMessageAlert() {
+    Swal.fire({
+        title: language.firstInfo.title,
+        text: language.firstInfo.description,
+        confirmButtonText: language.buttonMessage,
+        position: positionPopups,
+        customClass: {
+            popup: 'welcome-popup',
+            confirmButton: 'confirm-button',
+          },
+        showClass: classesForPopups.showClass,
+        hideClass: classesForPopups.hideClass,
+    });
+}
+
+
 (function () {
     // le doy un retraso de 1 segundo para que aparezca el primer popup
     setTimeout(() => {
+
         Swal.fire({
-            title: infoSpanish.firstInfo.title,
-            text: infoSpanish.firstInfo.description,
-            confirmButtonText: 'Genial!',
+            title: "Español / English ?",
+            showDenyButton: true,
+            confirmButtonText: "Español",
+            denyButtonText: `English`,
             position: positionPopups,
             customClass: {
                 popup: 'welcome-popup',
                 confirmButton: 'confirm-button',
+                denyButton: 'confirm-button',
               },
             showClass: classesForPopups.showClass,
             hideClass: classesForPopups.hideClass,
-        })
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // aquii
+              language = infoSpanish;
+              firtMessageAlert();
+            } else if (result.isDenied) {
+                language = infoEnglish;
+                firtMessageAlert();
+            }
+          });
+
     }, 1000);
 })();
+
 
 addEventListener('resize', () => {
     initEverything();
@@ -339,7 +364,7 @@ addEventListener('keyup', ({ code }) => {
     }
 });
 
-/* EVENT LISTENERS DE BOTONES EN PANTALLA (PARA MOBILE) */
+/* EVENT LISTENERS -> SCREEN BUTTONS (FOR MOBILE) */
 
 // BUTTONS
 const buttonJump = document.getElementById("button-up");

@@ -21,7 +21,7 @@ export function countingCoins(coins, info, classesForPopups, positionPopups) {
     Swal.fire({
         title: info.secondInfo.title,
         html: info.secondInfo.description,
-        confirmButtonText: 'Sigamos !',
+        confirmButtonText: info.secondInfo.button,
         position: positionPopups,
         customClass: {
           popup: 'first-message',
@@ -35,7 +35,7 @@ export function countingCoins(coins, info, classesForPopups, positionPopups) {
     Swal.fire({
       title: info.thirdInfo.title,
       html: info.thirdInfo.description,
-      confirmButtonText: 'Sigamos !',
+      confirmButtonText: info.thirdInfo.button,
       position: positionPopups,
       customClass: {
         popup: 'first-message',
@@ -49,7 +49,7 @@ export function countingCoins(coins, info, classesForPopups, positionPopups) {
     Swal.fire({
       title: info.fourthInfo.title,
       html: info.fourthInfo.description,
-      confirmButtonText: 'Sigamos !',
+      confirmButtonText: info.fourthInfo.button,
       position: positionPopups,
       customClass: {
         popup: 'first-message',
@@ -63,7 +63,7 @@ export function countingCoins(coins, info, classesForPopups, positionPopups) {
     Swal.fire({
       title: info.fifthInfo.title,
       html: info.fifthInfo.description,
-      confirmButtonText: 'Gracias !',
+      confirmButtonText: info.fifthInfo.button,
       position: positionPopups,
       customClass: {
         popup: 'first-message',
